@@ -1,0 +1,6 @@
+{
+  "name": "EquiTrace",
+  "description": "An explainable, research-grounded patient referral-prioritization dashboard for Alzheimer's diagnostic pathways.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
