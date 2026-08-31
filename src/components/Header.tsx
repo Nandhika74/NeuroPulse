@@ -157,7 +157,7 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-          <span>Live Held-Out Evaluation (AUC: {pipelineData?.evaluation.auc.toFixed(3) ?? '...'})</span>
+          <span>Live Held-Out Evaluation (AUC: {pipelineData?.evaluation?.auc !== undefined ? pipelineData.evaluation.auc.toFixed(3) : '...'})</span>
         </button>
 
         <button

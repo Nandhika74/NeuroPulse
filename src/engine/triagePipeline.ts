@@ -50,9 +50,11 @@ export function fitExpectedMMSERegression(designPatients: Patient[]): Regression
     // MMSE baseline ~ 28.5, -0.05 per year of age, +0.22 per year of education
     return {
       beta0: 27.2,
+      intercept: 27.2,
       betaAge: -0.045,
       betaEduc: 0.21,
       residualStd: 1.45,
+      rmse: 1.45,
       sampleSize: points.length,
       rSquared: 0.38,
     };
@@ -110,9 +112,11 @@ export function fitExpectedMMSERegression(designPatients: Patient[]): Regression
 
   return {
     beta0: Math.round(beta0 * 1000) / 1000,
+    intercept: Math.round(beta0 * 1000) / 1000,
     betaAge: Math.round(betaAge * 1000) / 1000,
     betaEduc: Math.round(betaEduc * 1000) / 1000,
     residualStd: Math.round(residualStd * 1000) / 1000,
+    rmse: Math.round(residualStd * 1000) / 1000,
     sampleSize: n,
     rSquared: Math.round(rSquared * 1000) / 1000,
   };
@@ -499,6 +503,7 @@ export function runTriagePipeline(
     results,
     funnel,
     regressionModel: model,
+    regression: model,
     evaluation,
     isSyntheticData: patients.some(p => p.subjectId.startsWith('SYN_')),
     dataSourceName: patients.some(p => p.subjectId.startsWith('SYN_'))

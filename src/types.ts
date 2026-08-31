@@ -72,9 +72,11 @@ export interface AuditTrailItem {
 
 export interface RegressionModel {
   beta0: number;
+  intercept: number;
   betaAge: number;
   betaEduc: number;
   residualStd: number;
+  rmse: number;
   sampleSize: number;
   rSquared: number;
 }
@@ -186,6 +188,7 @@ export interface PipelineOutput {
   results: TriageResult[];
   funnel: FunnelCounts;
   regressionModel: RegressionModel;
+  regression?: RegressionModel;
   evaluation: EvaluationMetrics;
   isSyntheticData: boolean;
   dataSourceName: string;

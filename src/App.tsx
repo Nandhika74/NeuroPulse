@@ -185,7 +185,7 @@ export default function App() {
         {/* Tab 3: System Architecture & Mathematics */}
         {activeTab === 'architecture' && pipelineData && (
           <div className="animate-in fade-in duration-150">
-            <ArchitecturePanel regression={pipelineData.regression} />
+            <ArchitecturePanel regression={pipelineData.regressionModel || pipelineData.regression} />
           </div>
         )}
 
