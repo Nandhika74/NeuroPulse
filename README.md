@@ -1,4 +1,4 @@
-# EquiTrace: Multi-Stage Alzheimer’s Triage & Referral Prioritization Dashboard
+# NeuroPulse: Multi-Stage Alzheimer’s Triage & Referral Prioritization Dashboard
 
 > **Research Prototype** — *Not for clinical diagnosis or medical decision-making. EquiTrace is designed to assist health systems and memory clinics in prioritizing specialist diagnostic review queues using demographic norming, longitudinal velocities, and multi-modal biomarker gatekeeping.*
 
