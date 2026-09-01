@@ -16,7 +16,7 @@ export const ReferencesPanel: React.FC = () => {
       authors: 'Pedraza, O., Clark, J. H., O’Bryant, S. E., Smith, G. E., & Lucas, J. A.',
       journal: 'The Clinical Neuropsychologist, 26(8), 1269-1284',
       year: '2012',
-      relevance: 'Provides standard regression formula (Expected MMSE = β₀ + β₁·Age + β₂·EDUC) used in EquiTrace for computing demographic-adjusted residual z-scores.',
+      relevance: 'Provides standard regression formula (Expected MMSE = β₀ + β₁·Age + β₂·EDUC) used in NeuroPulse for computing demographic-adjusted residual z-scores.',
       topic: 'Residual Z-Score Formula & Demographics (Stage 1)',
     },
     {
@@ -24,7 +24,7 @@ export const ReferencesPanel: React.FC = () => {
       authors: 'Kochhann, R., Varela, J. S., Lisboa, C. S., & Chaves, M. L.',
       journal: 'Dementia & Neuropsychologia, 4(2), 108-115',
       year: '2010',
-      relevance: 'Establishes the -1.68 points/year annualized MMSE rate-of-decline reference threshold employed for early conversion trajectory detection in EquiTrace.',
+      relevance: 'Establishes the -1.68 points/year annualized MMSE rate-of-decline reference threshold employed for early conversion trajectory detection in NeuroPulse.',
       topic: 'Cognitive Decline Trajectory Slope Threshold (Stage 1)',
     },
     {
@@ -61,7 +61,7 @@ export const ReferencesPanel: React.FC = () => {
           <h2 className="text-sm font-bold text-slate-900">Academic & Clinical Research Foundation</h2>
         </div>
         <p className="text-xs text-slate-600 leading-relaxed max-w-3xl">
-          EquiTrace is constructed upon published peer-reviewed neurological and psychometric literature. Below are the primary empirical sources grounding its algorithmic stages, thresholds, and fairness principles.
+          NeuroPulse is constructed upon published peer-reviewed neurological and psychometric literature. Below are the primary empirical sources grounding its algorithmic stages, thresholds, and fairness principles.
         </p>
       </div>
 

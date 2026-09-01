@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
+import { LandingPage } from './components/LandingPage';
 import { LegendBar } from './components/LegendBar';
 import { FunnelVisualizer } from './components/FunnelVisualizer';
 import { PatientTable } from './components/PatientTable';
@@ -15,7 +16,7 @@ import { AlertCircle, CheckCircle2, RefreshCw } from 'lucide-react';
 export default function App() {
   const [pipelineData, setPipelineData] = useState<PipelineOutput | null>(null);
   const [selectedPatient, setSelectedPatient] = useState<TriageResult | null>(null);
-  const [activeTab, setActiveTab] = useState<string>('triage');
+  const [activeTab, setActiveTab] = useState<string>('landing');
   const [selectedStageFilter, setSelectedStageFilter] = useState<string>('ALL');
   const [isUploadModalOpen, setIsUploadModalOpen] = useState<boolean>(false);
   const [isSanityModalOpen, setIsSanityModalOpen] = useState<boolean>(false);
@@ -150,8 +151,21 @@ export default function App() {
           </div>
         )}
 
-        {/* Legend Bar (Visible on all views) */}
-        <LegendBar />
+        {/* Legend Bar (Visible on dashboard views) */}
+        {activeTab !== 'landing' && <LegendBar />}
+
+        {/* Tab 0: Landing Overview */}
+        {activeTab === 'landing' && (
+          <div className="animate-in fade-in duration-200">
+            <LandingPage
+              pipelineData={pipelineData}
+              onLaunchDashboard={() => setActiveTab('triage')}
+              onOpenArchitecture={() => setActiveTab('architecture')}
+              onOpenEvaluation={() => setActiveTab('evaluation')}
+              onOpenReferences={() => setActiveTab('references')}
+            />
+          </div>
+        )}
 
         {/* Tab 1: Patient Prioritization Queue & 4-Stage Funnel */}
         {activeTab === 'triage' && pipelineData && (
@@ -200,7 +214,7 @@ export default function App() {
         {isLoading && !pipelineData && (
           <div className="py-20 flex flex-col items-center justify-center gap-3 text-slate-500 text-xs">
             <RefreshCw className="w-8 h-8 text-teal-600 animate-spin" />
-            <p className="font-medium">Initializing EquiTrace triage engine & fitting regression norms...</p>
+            <p className="font-medium">Initializing NeuroPulse triage engine & fitting regression norms...</p>
           </div>
         )}
       </main>

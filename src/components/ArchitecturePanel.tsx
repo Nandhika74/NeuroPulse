@@ -17,9 +17,9 @@ export const ArchitecturePanel: React.FC<ArchitecturePanelProps> = ({ regression
     <div className="space-y-4">
       {/* 4-Stage Architectural Overview Banner */}
       <div className="bg-white border border-slate-200 rounded-lg p-5 shadow-sm">
-        <h2 className="text-sm font-bold text-slate-900 mb-1">EquiTrace Multi-Stage Architectural Blueprint</h2>
+        <h2 className="text-sm font-bold text-slate-900 mb-1">NeuroPulse Multi-Stage Architectural Blueprint</h2>
         <p className="text-xs text-slate-600 leading-relaxed max-w-4xl">
-          EquiTrace replaces raw cognitive cutoffs with an equity-grounded, multi-modal pipeline. It couples demographic residual norming with longitudinal velocity checks, plasma biomarker gatekeeping, and quantitative structural MRI atrophy detection.
+          NeuroPulse replaces raw cognitive cutoffs with an equity-grounded, multi-modal pipeline. It couples demographic residual norming with longitudinal velocity checks, plasma biomarker gatekeeping, and quantitative structural MRI atrophy detection.
         </p>
 
         {/* Pipeline Diagram */}
@@ -118,7 +118,7 @@ export const ArchitecturePanel: React.FC<ArchitecturePanelProps> = ({ regression
             <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider">2. Multiplicative Priority Formula</h3>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            A static score only captures current impairment, ignoring how rapidly the patient is declining. EquiTrace formulates prioritization as a <strong>multiplicative product</strong> of instantaneous severity and trajectory urgency.
+            A static score only captures current impairment, ignoring how rapidly the patient is declining. NeuroPulse formulates prioritization as a <strong>multiplicative product</strong> of instantaneous severity and trajectory urgency.
           </p>
 
           <div className="p-3 rounded bg-purple-50/70 border border-purple-200 font-mono text-xs text-purple-900 space-y-2">

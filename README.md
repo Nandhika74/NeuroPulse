@@ -1,6 +1,6 @@
 # NeuroPulse: Multi-Stage Alzheimer’s Triage & Referral Prioritization Dashboard
 
-> **Research Prototype** — *Not for clinical diagnosis or medical decision-making. EquiTrace is designed to assist health systems and memory clinics in prioritizing specialist diagnostic review queues using demographic norming, longitudinal velocities, and multi-modal biomarker gatekeeping.*
+> **Research Prototype** — *Not for clinical diagnosis or medical decision-making. NeuroPulse is designed to assist health systems and memory clinics in prioritizing specialist diagnostic review queues using demographic norming, longitudinal velocities, and multi-modal biomarker gatekeeping.*
 
 ---
 
@@ -12,7 +12,7 @@ Dementia specialist referral pathways face severe waitlist bottlenecks, frequent
 - **Low-Education False Positives (Unnecessary Escalation)**: Individuals with limited formal schooling frequently score below standard cutoffs despite having normal cognitive function for their demographic background.
 - **Static vs. Velocity Blindness**: Conventional scorecards treat a static score identically regardless of whether the patient is clinically stable or declining rapidly.
 
-**EquiTrace** is an explainable, equity-grounded triage decision-support engine. It replaces arbitrary single-point cutoffs with a 4-stage multi-modal pipeline grounded in peer-reviewed neurological and psychometric literature, dynamically fitted on the **OASIS-2 Longitudinal MRI Dataset**.
+**NeuroPulse** is an explainable, equity-grounded triage decision-support engine. It replaces arbitrary single-point cutoffs with a 4-stage multi-modal pipeline grounded in peer-reviewed neurological and psychometric literature, dynamically fitted on the **OASIS-2 Longitudinal MRI Dataset**.
 
 ---
 
@@ -103,7 +103,7 @@ $$\text{Priority Score} = \text{Severity Component} \times \text{Urgency Compone
 
 ## 4. Empirical Evaluation Protocol
 
-EquiTrace enforces rigorous, non-circular statistical validation:
+NeuroPulse enforces rigorous, non-circular statistical validation:
 
 - **Live Held-Out Evaluation Ledger**: Automatically partitions the OASIS-2 dataset into a ~70% design cohort and a ~30% held-out test cohort (fixed seed 42).
 - **Zero Hardcoded Metrics**: All sensitivity, specificity, positive predictive value (PPV), F1 score, and ROC AUC metrics are dynamically computed at request time via `evaluateOnHeldOut()`.
@@ -215,4 +215,4 @@ npm start
 
 ## 9. Disclaimer & Intended Use
 
-EquiTrace is a **computational research and triage simulation prototype**. It is intended strictly for health systems engineering, algorithmic fairness research, and clinical workflow modeling. It is **not** a diagnostic medical device (SaMD) and must not be used as a standalone basis for patient diagnosis, prescription, or clinical decision-making.
+NeuroPulse is a **computational research and triage simulation prototype**. It is intended strictly for health systems engineering, algorithmic fairness research, and clinical workflow modeling. It is **not** a diagnostic medical device (SaMD) and must not be used as a standalone basis for patient diagnosis, prescription, or clinical decision-making.

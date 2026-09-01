@@ -264,7 +264,7 @@ export const EvaluationPanel: React.FC<EvaluationPanelProps> = ({
                   stroke="#0d9488"
                   strokeWidth={2.5}
                   dot={{ r: 3, fill: '#0d9488' }}
-                  name="EquiTrace Triage Model"
+                  name="NeuroPulse Triage Model"
                 />
               </LineChart>
             </ResponsiveContainer>

@@ -105,7 +105,7 @@ export function runSanityTests(): SanityTestCase[] {
     subjectId: 'TEST_05_BRAIN_ATROPHY_UPGRADE',
     group: 'Converted',
     gender: 'F',
-    educ: 12,
+    educ: 16,
     baselineAge: 72,
     latestAge: 73.5,
     baselineMmse: 27,

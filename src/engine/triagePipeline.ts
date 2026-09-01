@@ -44,8 +44,8 @@ export function fitExpectedMMSERegression(designPatients: Patient[]): Regression
     }
   }
 
-  // Fallback if very few points
-  if (points.length < 3) {
+  // Fallback if small sample size (< 15 normal points)
+  if (points.length < 15) {
     // Standard published clinical literature norm (Mungas 1996, Pedraza 2012)
     // MMSE baseline ~ 28.5, -0.05 per year of age, +0.22 per year of education
     return {
