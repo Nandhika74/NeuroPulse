@@ -1,7 +1,6 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI } from '@google/genai';
@@ -14,8 +13,8 @@ import { PipelineOutput } from './src/types';
 
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Safe directory resolution for both dev (ESM/tsx) and bundled prod (CJS)
+const rootDir = process.cwd();
 
 // In-memory state for current active dataset and pipeline cache
 let currentCSVContent = '';
@@ -23,9 +22,13 @@ let currentPipelineOutput: PipelineOutput | null = null;
 
 // Read bundled OASIS-2 CSV
 function loadDefaultDataset(): string {
-  const defaultPath = path.join(__dirname, 'src', 'data', 'oasis2.csv');
+  const defaultPath = path.join(rootDir, 'src', 'data', 'oasis2.csv');
   if (fs.existsSync(defaultPath)) {
     return fs.readFileSync(defaultPath, 'utf-8');
+  }
+  const altPath = typeof __dirname !== 'undefined' ? path.join(__dirname, 'src', 'data', 'oasis2.csv') : '';
+  if (altPath && fs.existsSync(altPath)) {
+    return fs.readFileSync(altPath, 'utf-8');
   }
   // Fallback to generated synthetic data
   return generateSyntheticOASIS(20);
@@ -258,11 +261,11 @@ Provide ONLY the concise clinical reasoning paragraph.`;
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`EquiTrace server running at http://0.0.0.0:${PORT}`);
+    console.log(`NeuroPulse server running at http://0.0.0.0:${PORT}`);
   });
 }
 
 startServer().catch(err => {
-  console.error('Failed to start EquiTrace server:', err);
+  console.error('Failed to start NeuroPulse server:', err);
   process.exit(1);
 });
